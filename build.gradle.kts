@@ -33,9 +33,9 @@ dependencies {
     developmentOnly("org.springframework.boot:spring-boot-devtools")
     runtimeOnly("com.mysql:mysql-connector-j")
     annotationProcessor("org.projectlombok:lombok")
-//    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 //    runtimeOnly("org.springframework.boot:spring-boot-docker-compose")
-//    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testRuntimeOnly("org.junit.platform:junit-platform-launcher")
     implementation ("org.mapstruct:mapstruct:1.6.3")
     annotationProcessor ("org.mapstruct:mapstruct-processor:1.6.3")
     implementation("io.jsonwebtoken:jjwt-api:0.12.6")
@@ -44,13 +44,13 @@ dependencies {
 
 //    testImplementation("com.fasterxml.jackson.core:jackson-databind")
 //    testImplementation("org.springframework.boot:spring-boot-starter-validation")
-//    runtimeOnly("com.h2database:h2")
+    runtimeOnly("com.h2database:h2")
 }
 ////
-//tasks.withType<Test> {
-////    useJUnitPlatform()
+tasks.withType<Test> {
+    useJUnitPlatform()
 //    enabled = false
-//}
+}
 tasks.withType<Test>().configureEach {
-    enabled = false
+//    enabled = false
 }

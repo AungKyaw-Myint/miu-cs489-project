@@ -31,9 +31,10 @@ public class Dentist extends User{
     @OneToMany(mappedBy = "dentist")
     private List<Appointment> appointments;
 
-    public Dentist(String firstName, String lastName, String email, String phone) {
+    public Dentist(String firstName, String lastName,String specialization, String email, String phone) {
         this.firstName = firstName;
         this.lastName  = lastName;
+        this.specialization = specialization;
         this.email     = email;
         this.phone     = phone;
     }

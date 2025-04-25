@@ -8,7 +8,7 @@ import org.cs489.dentalsurgeries.auth.User;
 import java.util.List;
 
 @Entity
-@Table(name = "admin")
+@Table(name = "admins")
 @NoArgsConstructor
 @Data
 @DiscriminatorValue("ADMIN")
