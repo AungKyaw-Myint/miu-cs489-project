@@ -37,13 +37,6 @@ public class PatientController {
         return ResponseEntity.status(HttpStatus.OK).body(patientResponse);
     }
 
-//    @PostMapping()
-//    public ResponseEntity<PatientResponse> addPatient(@RequestBody PatientRequest patientRequest) {
-//        PatientResponse patientResponse =patientService.addPatient(patientRequest);
-//
-//        return ResponseEntity.status(HttpStatus.CREATED).body(patientResponse);
-//    }
-
     @PutMapping("/{patientId}")
     public ResponseEntity<PatientResponse> updatePatient(@PathVariable("patientId") Long patientId,
                                                          @Validated @RequestBody PatientRequest patientRequest) {
@@ -66,4 +59,13 @@ public class PatientController {
     public ResponseEntity<List<PatientResponse>> searchPublisher(@PathVariable String searchString) {
         return ResponseEntity.status(HttpStatus.OK).body(patientService.searchPatient(searchString));
     }
+
+
+
+//    @PostMapping()
+//    public ResponseEntity<PatientResponse> addPatient(@RequestBody PatientRequest patientRequest) {
+//        PatientResponse patientResponse =patientService.addPatient(patientRequest);
+//
+//        return ResponseEntity.status(HttpStatus.CREATED).body(patientResponse);
+//    }
 }

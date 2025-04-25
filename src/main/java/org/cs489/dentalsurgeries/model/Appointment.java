@@ -31,7 +31,7 @@ public class Appointment {
     private AppointmentStatus appointmentStatus;
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST} )
-    @JoinColumn(name = "address_id")
+    @JoinColumn(name = "patient_id")
     private Patient patient;
 
     @ManyToOne(cascade = {CascadeType.MERGE,CascadeType.PERSIST} )

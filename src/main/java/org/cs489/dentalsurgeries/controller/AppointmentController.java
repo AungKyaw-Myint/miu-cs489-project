@@ -55,6 +55,7 @@ public class AppointmentController {
     }
 
     @GetMapping("/search")
+    @PreAuthorize("hasAnyAuthority('admin:write')")
     public ResponseEntity<Page<AppointmentResponse>> getAppointments(
             @RequestParam(required = false) Long patientId,
             @RequestParam(required = false) Long dentistId,

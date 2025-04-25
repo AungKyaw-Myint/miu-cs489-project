@@ -3,10 +3,11 @@ package org.cs489.dentalsurgeries.dto.request;
 import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Positive;
 
 public record AddressReqeust(
 
-        @NotBlank
+        @Positive(message = "Number must be positive")
         int no,
 
         @NotBlank(message = "Street is required")

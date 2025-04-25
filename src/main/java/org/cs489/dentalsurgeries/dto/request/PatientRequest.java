@@ -1,5 +1,6 @@
 package org.cs489.dentalsurgeries.dto.request;
 
+import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import org.cs489.dentalsurgeries.auth.UserRole;
@@ -10,8 +11,10 @@ import java.time.LocalDate;
 public record PatientRequest(
 
         @NotBlank(message = "Username is required")
-        @Size(min = 3, max = 10, message = "Username must be between 3 and 7 characters")
+        @Size(min = 3, max = 10, message = "Username must be between 3 and 10 characters")
          String username,
+        @NotBlank(message = "Password is required")
+        @Size(min = 3, max = 10, message = "Password must be between 3 and 10")
          String password,
          UserRole role,
          String patientNo,
@@ -25,7 +28,7 @@ public record PatientRequest(
          String gender,
          LocalDate birthDate,
 
-         @Validated
+         @Valid
          AddressReqeust address
 ) {
 }
